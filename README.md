@@ -24,7 +24,7 @@ Clone the repository:
 sh
 Copy
 Edit
-git clone https://github.com/yourusername/office-management-system.git
+
 Import the database (database.sql) into MySQL
 Configure the database connection in config.php
 Run the project on a local server (XAMPP/LAMP/WAMP)
