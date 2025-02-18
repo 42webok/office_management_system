@@ -79,7 +79,7 @@
                     </a>
                 </li>
                 <li class="nav-item custom_nav">
-                    <a href="components.php">
+                    <a href="my_attandance.php">
                         <i class="la la-th"></i>
                         <p>Attendance</p>
                         <!-- <span class="badge badge-count">6</span> -->
