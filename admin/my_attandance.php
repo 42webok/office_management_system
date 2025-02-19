@@ -31,7 +31,7 @@ $user_id = $_SESSION['login_id'];
                     <div class="card w-100">
                         <div class="card-header d-flex justify-content-between align-items-center ">
                             <div class="card-title">View Attendance History</div>
-                            <a href="#" class="text-decoration-none">
+                            <a href="mark_attandance.php" class="text-decoration-none">
                                 <div class="btn bg-info text-light">Mark Attendance</div>
                             </a>
                         </div>
