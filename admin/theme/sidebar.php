@@ -86,7 +86,7 @@
                     </a>
                 </li>
                 <li class="nav-item custom_nav">
-                    <a href="components.php">
+                    <a href="get_leave.php">
                         <i class="la la-bell"></i>
                         <p>Leave Management</p>
                         <!-- <span class="badge badge-success">3</span> -->
