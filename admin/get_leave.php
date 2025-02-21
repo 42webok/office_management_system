@@ -118,8 +118,6 @@ $resultData = mysqli_query($conn, $sql);
 ?>
 
 <script>
-    
-
 const urlParams = new URLSearchParams(window.location.search);
 const status = urlParams.get('status');
 
@@ -146,7 +144,7 @@ if (status === 'success') {
             from: "top",
             align: "right"
         }
-    }); 
+    });
 } else if (status === 'update_success') {
     $.notify({
         icon: "la la-check",
@@ -158,7 +156,7 @@ if (status === 'success') {
             from: "top",
             align: "right"
         }
-    }); 
+    });
 } else if (status === 'update_failed') {
     $.notify({
         icon: "la la-check",
@@ -182,7 +180,7 @@ if (status === 'success') {
             from: "top",
             align: "right"
         }
-    }); 
+    });
 } else if (status === 'delete_success') {
     $.notify({
         icon: "la la-check",
@@ -194,8 +192,8 @@ if (status === 'success') {
             from: "top",
             align: "right"
         }
-    }); 
-} 
+    });
+}
 
 const url = new URL(window.location.href);
 if (url.searchParams.has('status')) {
