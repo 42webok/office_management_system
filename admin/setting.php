@@ -49,7 +49,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
                                 <div class="mb-4 w-25">
                                     <label for="name" class="form-label">Choose Logo</label>
                                    <div class="files d-flex justify-content-center align-items-center"> 
-                                    <input type="file" name="logo" id="logo_img">
+                                    <input type="file" class="form_control" name="logo" id="logo_img">
                                     <h6>Choose New <span class="text-info">Logo <i class="la la-image fs-5 h5 m-0 p-0"></i></span> </h6>
                                    </div>
                                     <div class="show_logo" id="preview">

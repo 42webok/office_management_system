@@ -99,3 +99,55 @@
 .from-show-notify label{
 	padding-top: 0.65rem;
 }
+
+/* Post container code start here */
+.custom_container .post-img {
+	width: 100%;
+  }
+  
+  .custom_container .container {
+	background-color: rgb(255, 255, 255);
+	padding: 20px;
+  }
+  
+
+  
+  .custom_container .author-img {
+	height: 40px;
+	width: 40px;
+	display: inline;
+	border-radius: 50%;	
+	background-color: white;
+	object-fit: cover;
+  }
+  
+  .custom_container .header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	width: 100%;
+  }
+  
+  .custom_container .authors {
+	margin-left: 15px;
+  }
+  
+  .custom_container svg {
+	transition: fill 0.3s ease;
+	cursor: pointer;
+	margin-right: 20px;
+  }
+  
+  
+  .custom_container .interactions {
+	margin-top: 15px;
+  }
+  
+  .custom_container .description {
+	text-wrap: pretty;
+	max-width: 500px;
+  }
+  .custom_container .post_time {
+	font-size: 12px;
+  }
+  
