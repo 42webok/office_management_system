@@ -150,4 +150,12 @@
   .custom_container .post_time {
 	font-size: 12px;
   }
-  
+  .comment_card img{
+	width: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	height: 40px;
+  }
+  .comment_card .data_box{
+	gap: 10px;
+  }

@@ -85,7 +85,85 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
                                     </td>
 
                                     <td class="text-center"><?php echo $row['created_at']; ?></td>
-                                    <td class="text-center">no comment</td>
+                                    <td class="text-center">
+                                        <?php 
+                                      $sql2 = "SELECT * FROM office_post_comments WHERE post_id = '$row[id]'";
+                                      $result2 = mysqli_query($conn, $sql2);
+                                    //   $end = mysqli_fetch_assoc($result2);
+                                    //   echo "<pre>";
+                                    //   print_r($end);
+                                    //   exit;
+                                      $count2 = mysqli_num_rows($result2);
+                                      if($count2 > 0){
+                                        ?>
+                                        <div class="btn btn-sm btn-outline-info " type="button" data-toggle="modal"
+                                            data-target="#exampleModal<?php echo $row['id']; ?>">
+                                            Viev Comment
+                                        </div>
+                                        <?php                      
+                    }else{
+                    echo "<div class='btn btn-sm btn-outline-info'>No Comment </div>";
+                    }
+                    ?>
+                                        <!-- Model code for adding comment -->
+                                        <div class="modal fade" id="exampleModal<?php echo $row['id']; ?>" tabindex="-1"
+                                            role="dialog" aria-labelledby="exampleModalLabel<?php echo $row['id']; ?>"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title"
+                                                            id="exampleModalLabel<?php echo $row['id']; ?>">Add
+                                                            Comment</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <?php 
+                                                         while($rows_data = mysqli_fetch_assoc($result2)){
+                                                            $user_data = "SELECT * FROM users WHERE id = '$rows_data[user_id]'";
+                                                            $result_user = mysqli_query($conn, $user_data);
+                                                            $result_row = mysqli_fetch_assoc($result_user);
+                                                            ?>
+
+                                                        <div class="card comment_card p-2">
+                                                            <div class="data_box mb-3  d-flex align-items-center ">
+                                                                <div class="image">
+                                                                    <?php 
+                                                                    if(empty($result_row['image'])){
+                                                                        echo '<img src="../assets/img/avatar7.png">';
+                                                                    }else{
+                                                                    ?>
+                                                                    <img src="uploads/<?php echo $result_row['image']; ?>">
+                                                                    <?php 
+                                                                        }
+                                                                            ?>
+                                                                </div>
+                                                                <div class="info  d-flex flex-column  align-items-start">
+                                                                    <h6><?php echo $result_row['name']; ?></h6>
+                                                                    <span class="post_time time-ago"
+                                                                        data-time="<?php echo $rows_data['created_at']; ?>">
+
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment_txt d-flex">
+                                                                <p><?php echo $rows_data['comment_text']; ?></p>
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                         }
+                                                       ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ----------- -->
+
+                                    </td>
 
                                     <td class="text-center"><a href="edit_post.php?post_id=<?php echo $row['id']?>"><i
                                                 class="la la-edit text-info"></i></a>

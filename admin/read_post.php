@@ -54,7 +54,15 @@
                                         $data = mysqli_fetch_assoc($user_result);
                                         ?>
                                         <div class="header">
-                                            <img class="author-img" src="uploads/<?php echo $data['image']; ?>" />
+                                            <?php 
+                                                if(empty($data['image'])){
+                                                    echo '<img src="../assets/img/avatar7.png" class="author-img">';
+                                                }else{
+                                                ?>
+                                                                    <img  class="author-img" src="uploads/<?php echo $data['image']; ?>">
+                                                                    <?php 
+                                                }
+                                                    ?>
                                             <p class="authors d-flex flex-column">
                                                 <b>
                                                     <?php echo $data['name']; ?>
@@ -104,7 +112,7 @@
                                                             <h5 class="modal-title"
                                                                 id="exampleModalLabel<?php echo $row['id']; ?>">Add
                                                                 Comment</h5>
-                                                            <button type="button"   class="close" data-dismiss="modal"
+                                                            <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -122,7 +130,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
 
                                             <!-- ----------- -->
                                         </div>
@@ -175,7 +183,7 @@
 
 
 <script>
-    $("document").ready(function() {
+$("document").ready(function() {
     $(document).on('submit', '.insert_comment', function(e) {
         e.preventDefault();
         let frm_data = $(this).serialize(); // Serialize the form data
@@ -185,8 +193,8 @@
             url: "add_comment.php",
             data: frm_data,
             success: function(data) {
-                $('.close').click();  // Close the modal or any other element
-                $('#comments').html('');  // Clear the comment list or relevant container
+                $('.close').click(); // Close the modal or any other element
+                $('#comments').html(''); // Clear the comment list or relevant container
 
                 // Clear the text area after successful comment submission
                 $('textarea').val(''); // This will clear the textarea
@@ -221,7 +229,4 @@
         });
     });
 });
-
-    
-    
-    </script>
+</script>
