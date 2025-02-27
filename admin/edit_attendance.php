@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 $user_id = $_SESSION['login_id'];
 
 $attendance_id = $_GET['id'];
@@ -48,7 +52,7 @@ if (isset($_POST['update'])) {
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Edit Attendance</h4>
+                <!-- <h4 class="page-title">Edit Attendance</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">

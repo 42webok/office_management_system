@@ -100,8 +100,7 @@ $mylogo = $logo_img['logo'];
                                
                                 <div class="u-text">
                                     <h4><?php echo $row['name'] ?></h4>
-                                    <p class="text-muted"><?php echo $row['email'] ?></p><a href="profile.html"
-                                        class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                    <p class="text-muted"><?php echo $row['email'] ?></p>
                                 </div>
                             </div>
                             <?php 
@@ -111,7 +110,14 @@ $mylogo = $logo_img['logo'];
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="employee_profile.php"><i class="ti-user"></i> My Profile</a>
                         <!-- <div class="dropdown-divider"></div> -->
-                        <a class="dropdown-item" href="setting.php"><i class="ti-settings"></i>Setting</a>
+                       <?php 
+                       
+                         if($_SESSION['role'] == 1){
+                            ?>
+                             <a class="dropdown-item" href="setting.php"><i class="ti-settings"></i>Setting</a>
+                            <?php 
+                         }
+                       ?>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php"><i class="fa fa-power-off"></i> Logout</a>
                     </ul>

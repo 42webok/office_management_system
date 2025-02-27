@@ -6,6 +6,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
  ?>
 <?php
 $status = isset($_GET['status']) ? $_GET['status'] : '';

@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 $user_id = $_SESSION['login_id'];
 
 $usersQuery = "SELECT * FROM users WHERE role= 0";
@@ -129,3 +133,4 @@ $resultData = mysqli_query($conn, $sql);
 <?php 
 	include("theme/script.php");	
 ?>
+

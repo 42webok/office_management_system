@@ -29,12 +29,12 @@ ob_start();
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Website Settings</h4>
+                <!-- <h4 class="page-title">Website Settings</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">
                         <div class="card-header">
-                            <div class="card-title">Add Changes</div>
+                            <div class="card-title">Website Settings</div>
                         </div>
                         <div class="card-body">
                         <form class="needs-validation" action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
@@ -56,7 +56,7 @@ ob_start();
                                 <div class="mb-4">
                                     <label for="name" class="form-label">Choose Pic</label>
                                    <div class="files d-flex justify-content-center align-items-center w-25"> 
-                                    <input type="file" name="image" id="logo_img">
+                                    <input type="file" name="image" required id="logo_img">
                                     <h6>Choose New <span class="text-info">Image <i class="la la-image fs-5 h5 m-0 p-0"></i></span> </h6>
                                    </div>
                                     <div class="show_logo" id="preview">

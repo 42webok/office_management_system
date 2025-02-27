@@ -7,6 +7,17 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM leave_request WHERE  id = '$id'";
+        $result = mysqli_query($conn, $sql);
+        $rows = mysqli_fetch_assoc($result);
+        if($rows['user_id'] != $_SESSION['login_id']){
+            header("location: index.php");
+        }
+    }
+}
 
 // if(!isset($_GET['id'])){
 //     header("location: index.php");
@@ -58,7 +69,7 @@ if(isset($_POST['update_request'])){
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Leave Request</h4>
+                <!-- <h4 class="page-title">Leave Request</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">

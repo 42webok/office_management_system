@@ -6,6 +6,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 ?>
 
 <?php
@@ -28,7 +32,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Add Employee</h4>
+                <!-- <h4 class="page-title"></h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">

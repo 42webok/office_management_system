@@ -6,6 +6,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 
 if (isset($_GET['id'])) {
     $attendance_id = $_GET['id'];

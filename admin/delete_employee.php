@@ -1,5 +1,8 @@
 <?php 
-
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 include("theme/config.php");
 
 $sql = "DELETE FROM `users` WHERE `id` = '".$_GET['emp_id']."'";

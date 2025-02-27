@@ -5,6 +5,10 @@ if(!isset($_SESSION['name'])){
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 ob_start();
 ?>
 <!-- including Header -->
@@ -31,7 +35,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Edit Employee</h4>
+                <!-- <h4 class="page-title">Edit Employee</h4> -->
                 <?php 
                  if(isset($_GET['emp_id'])){
                     $emp_id = $_GET['emp_id'];

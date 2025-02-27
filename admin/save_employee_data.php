@@ -5,6 +5,10 @@ if(!isset($_SESSION['name'])){
    header("location:index.php");
    exit;
 }
+if($_SESSION['role'] == 0){
+   header("location:index.php");
+   exit;
+}
 
 if(isset($_POST['add_employee'])){
      $name = mysqli_real_escape_string($conn , $_POST['name']);

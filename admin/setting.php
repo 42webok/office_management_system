@@ -7,6 +7,10 @@ include("theme/config.php");
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
  ?>
 <?php
 $status = isset($_GET['status']) ? $_GET['status'] : '';
@@ -45,6 +49,8 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
                                   $footer = $row['footer'];
                                   $companey = $row['companey'];
                                   $url = $row['url'];
+                                  $start_time = $row['office_start_time'];
+                                  $end_time = $row['office_end_time'];
                                  ?>
                                 <div class="mb-4 w-25">
                                     <label for="name" class="form-label">Choose Logo</label>
@@ -73,6 +79,18 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
                                 <div class="mb-4">
                                     <label for="companey" class="form-label">Companey Name</label>
                                     <input type="text" class="form-control" placeholder="Enter Companey name" value='<?php echo $companey ?>' name="companey">
+
+                                </div>
+                                <!-- Companey Start time -->
+                                <div class="mb-4">
+                                    <label for="start_time" class="form-label">Office Start Time</label>
+                                    <input type="time" class="form-control" value='<?php echo $start_time ?>' required name="start_time">
+
+                                </div>
+                                <!-- Companey End time -->
+                                <div class="mb-4">
+                                    <label for="end_time" class="form-label">Office End Time</label>
+                                    <input type="time" class="form-control" value='<?php echo $end_time ?>' required name="end_time">
 
                                 </div>
                                

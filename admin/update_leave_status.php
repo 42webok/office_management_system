@@ -6,7 +6,10 @@
     header("location:index.php");
     exit;
 }
-
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 
  if(isset($_POST['update_status'])){
     $status_id = $_POST['status_id'];

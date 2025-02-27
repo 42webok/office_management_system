@@ -34,12 +34,12 @@ $resultData = mysqli_query($conn, $sql);
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Manage Attendance</h4>
+                <!-- <h4 class="page-title">Manage Attendance</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">
                         <div class="card-header d-flex justify-content-between align-items-center ">
-                            <div class="card-title">View Attendance History</div>
+                            <div class="card-title">Manage Attendance</div>
                             <a href="leave_request.php" class="text-decoration-none">
                                 <div class="btn bg-info text-light">Leave Request</div>
                             </a>

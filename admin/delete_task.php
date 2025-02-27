@@ -1,7 +1,10 @@
 <!-- including Header -->
 <?php 
  include("theme/config.php");
-  
+ if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
  session_start();
 
  if(!isset($_SESSION['name'])){

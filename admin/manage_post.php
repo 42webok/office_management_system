@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
  ?>
 <?php
 $status = isset($_GET['status']) ? $_GET['status'] : '';
@@ -136,12 +140,14 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
                                                                         echo '<img src="../assets/img/avatar7.png">';
                                                                     }else{
                                                                     ?>
-                                                                    <img src="uploads/<?php echo $result_row['image']; ?>">
+                                                                    <img
+                                                                        src="uploads/<?php echo $result_row['image']; ?>">
                                                                     <?php 
                                                                         }
                                                                             ?>
                                                                 </div>
-                                                                <div class="info  d-flex flex-column  align-items-start">
+                                                                <div
+                                                                    class="info  d-flex flex-column  align-items-start">
                                                                     <h6><?php echo $result_row['name']; ?></h6>
                                                                     <span class="post_time time-ago"
                                                                         data-time="<?php echo $rows_data['created_at']; ?>">

@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 ob_start();
 ?>
 
@@ -27,7 +31,7 @@ ob_start();
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Add Post</h4>
+                <!-- <h4 class="page-title">Add Post</h4> -->
 
                 <div class="row p-3">
                     <div class="card shadow-lg p-4 w-100">

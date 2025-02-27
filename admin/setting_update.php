@@ -5,6 +5,10 @@ if(!isset($_SESSION['name'])){
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 if(isset($_POST['setting'])){
     $filename = $_FILES['logo']['name'];
     
@@ -28,8 +32,14 @@ if(isset($_POST['setting'])){
     $companey = mysqli_real_escape_string($conn , $_POST['companey']);
     $url = mysqli_real_escape_string($conn , $_POST['url']);
     $protected_name = mysqli_real_escape_string($conn , $newfilename);
+    $start_time =  $_POST['start_time'];
+    $end_time = $_POST['end_time'];
+    
 
-    $sql = "UPDATE `setting` SET logo = '$protected_name' , footer = '$footer' , companey = '$companey' , url = '$url' WHERE id = 1";
+
+    $sql = "UPDATE `setting` SET logo = '$protected_name' , footer = '$footer' , companey = '$companey' , url = '$url' , office_start_time = '$start_time' ,  office_end_time = '$end_time' WHERE id = 1";
+    // echo $sql;
+    // exit;
     $result = mysqli_query($conn, $sql);
     
     if($result){

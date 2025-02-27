@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 $user_id = $_SESSION['login_id'];
 $count = 1;
 
@@ -31,12 +35,12 @@ $resultData = mysqli_query($conn, $sql);
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Manage Leave Request</h4>
+                <!-- <h4 class="page-title">Manage Leave Request</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">
                         <div class="card-header d-flex justify-content-between align-items-center ">
-                            <div class="card-title">View Leaves</div>
+                            <div class="card-title">Manage Leave Request</div>
                             <!-- <a href="leave_request.php" class="text-decoration-none">
                                 <div class="btn bg-info text-light">Leave Request</div>
                             </a> -->

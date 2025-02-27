@@ -8,6 +8,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 ob_start();
 ?>
 <?php
@@ -33,11 +37,11 @@ ini_set('memory_limit', '256M');     // Optional: Increase memory if needed
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Add Task</h4>
+                <!-- <h4 class="page-title">Add Task</h4> -->
 
                 <div class="row p-3">
                     <div class="card shadow-lg p-4 w-100">
-                        <h5 class="mb-4 text-dark">Create Task</h5>
+                        <h5 class="mb-4 text-dark">Add Task</h5>
                         <form action="" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                             <!-- Title Field -->
                             <div class="mb-3">

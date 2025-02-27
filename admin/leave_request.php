@@ -27,7 +27,7 @@ $user_id = $_SESSION['login_id'];
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Leave Request</h4>
+                <!-- <h4 class="page-title">Leave Request</h4> -->
 
                 <div class="row p-3">
                     <div class="card w-100">

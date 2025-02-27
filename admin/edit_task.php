@@ -7,6 +7,10 @@
     header("location:index.php");
     exit;
 }
+if($_SESSION['role'] == 0){
+    header("location:index.php");
+    exit;
+ }
 ob_start();
 ?>
 <?php
@@ -32,7 +36,7 @@ ini_set('memory_limit', '256M');     // Optional: Increase memory if needed
     <div class="main-panel">
         <div class="content">
             <div class="container-fluid">
-                <h4 class="page-title">Edit Task</h4>
+                <!-- <h4 class="page-title">Edit Task</h4> -->
                 <?php 
                 if(isset($_GET['task_id'])){
                     $edit_select = "SELECT * FROM manage_task WHERE task_id = '".$_GET['task_id']."'";

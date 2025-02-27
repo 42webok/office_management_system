@@ -57,6 +57,9 @@
                     <!-- <span class="badge badge-count">5</span> -->
                 </a>
             </li>
+            <?php 
+           if($_SESSION['role'] == 1){
+            ?>
             <li class="nav-item custom_nav">
                 <a href="manage_employee.php">
                     <i class="la la-users"></i>
@@ -64,6 +67,14 @@
                     <!-- <span class="badge badge-count">14</span> -->
                 </a>
             </li>
+
+            <?php
+           }
+           
+           ?>
+            <?php 
+           if($_SESSION['role'] == 1){
+            ?>
             <li class="nav-item custom_nav">
                 <a href="manage_tasks.php">
                     <i class="la la-tasks"></i>
@@ -71,6 +82,14 @@
                     <!-- <span class="badge badge-count">50</span> -->
                 </a>
             </li>
+
+            <?php
+           }
+           
+           ?>
+            <?php 
+           if($_SESSION['role'] == 0){
+            ?>
             <li class="nav-item custom_nav">
                 <a href="my_tasks.php">
                     <i class="la la-suitcase"></i>
@@ -78,6 +97,15 @@
                     <!-- <span class="badge badge-count">50</span> -->
                 </a>
             </li>
+
+            <?php
+           }
+           
+           ?>
+
+            <?php 
+            if($_SESSION['role'] == 0){
+               ?>
             <li class="nav-item custom_nav">
                 <a href="my_attandance.php">
                     <i class="la la-th"></i>
@@ -85,6 +113,26 @@
                     <!-- <span class="badge badge-count">6</span> -->
                 </a>
             </li>
+            <?php
+            }else if($_SESSION['role'] == 1){
+                ?>
+            <li class="nav-item custom_nav">
+                <a href="manage_attendance.php">
+                    <i class="la la-th"></i>
+                    <p>Attendance</p>
+                    <!-- <span class="badge badge-count">6</span> -->
+                </a>
+            </li>
+            <?php
+            }
+            ?>
+
+
+            
+
+            <?php 
+            if($_SESSION['role'] == 0){
+               ?>
             <li class="nav-item custom_nav">
                 <a href="get_leave.php">
                     <i class="la la-bell"></i>
@@ -92,6 +140,19 @@
                     <!-- <span class="badge badge-success">3</span> -->
                 </a>
             </li>
+            <?php
+            }else if($_SESSION['role'] == 1){
+                ?>
+            <li class="nav-item custom_nav">
+                <a href="leaveApproveReject.php">
+                    <i class="la la-bell"></i>
+                    <p>Leave Management</p>
+                    <!-- <span class="badge badge-success">3</span> -->
+                </a>
+            </li>
+            <?php
+            }
+            ?>
             <li class="nav-item custom_nav">
                 <a href="read_post.php">
                     <i class="la la-bullhorn"></i>
@@ -99,14 +160,39 @@
                     <!-- <span class="badge badge-danger">25</span> -->
                 </a>
             </li>
+
+            <?php 
+           if($_SESSION['role'] == 1){
+            ?>
+            <li class="nav-item custom_nav">
+                <a href="setting.php">
+                    <i class="la la-cog"></i>
+                    <p>Setting</p>
+                    <!-- <span class="badge badge-count">50</span> -->
+                </a>
+            </li>
+
+            <?php
+           }
+           ?>
+            <?php 
+           if($_SESSION['role'] == 1){
+            ?>
             <li class="nav-item update-pro ">
                 <a href="add_post.php" class="text-decoration-none p-0">
-                    <button class="btn btn-info" >
+                    <button class="btn btn-info">
                         <i class="la la-hand-pointer-o"></i>
                         <p>Create Post</p>
                     </button>
                 </a>
             </li>
+
+            <?php
+           }
+           
+           ?>
+
+
         </ul>
     </div>
 </div>
